@@ -37,7 +37,7 @@ func calculate_text():
 	var offsets : PoolIntArray = $Offsets.indices
 	var text_indices = []
 	for i in ciphervals.size():
-		text_indices.append((ciphervals[i]+(26+offsets[i%offsets.size()]))%26)
+		text_indices.append((ciphervals[i]-(26+offsets[i%offsets.size()]))%26)
 	$Text.indices = text_indices
 	$Text/TextEdit.text = convert_vals_to_text(text_indices)
 	$Text/TextEdit2.text = convert_vals_to_indices(text_indices)
